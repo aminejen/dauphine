@@ -1,0 +1,49 @@
+
+
+
+<div>
+<br/>
+matricule<input [(ngModel)]="matricule"/>
+<br/>
+lastname<input [(ngModel)]="lastname"/>
+<br/>
+firstname<input [(ngModel)]="firstname"/>
+<br/>
+year<input [(ngModel)]="year"/>
+<br/>
+<button (click)="submit()">submit</button>
+<br/>
+{{msg}}
+</div>
+<br/>
+<button [disabled]="!firstPage" (click)="first()">first</button>
+<button [disabled]="!previousPage" (click)="previous()">previous</button>
+<button [disabled]="!nextPage" (click)="next()">next</button>
+<button [disabled]="!lastPage" (click)="last()">last</button>
+<table>
+<thead>
+  <th>
+    matricule
+  </th>
+  <th>
+    lastname
+  </th>
+  <th>
+    firstname
+  </th>
+</thead>
+<tbody>
+<tr *ngFor="let elmt of elements">
+  <td>
+    <button (click)="delete(elmt)">X</button>
+    {{elmt.content.matricule.content}}
+  </td>
+  <td>
+    {{elmt.content.lastname.content}}
+  </td>
+  <td>
+    {{elmt.content.firstname.content}}
+  </td>
+</tr>
+</tbody>
+</table>

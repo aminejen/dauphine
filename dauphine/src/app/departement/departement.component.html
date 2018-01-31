@@ -1,0 +1,49 @@
+<div>
+<br/>
+departmentcode<input [(ngModel)]="departmentcode"/>
+<br/>
+shortname<input [(ngModel)]="shortname"/>
+<br/>
+fullname<input [(ngModel)]="fullname"/>
+<br/>
+year<input [(ngModel)]="year"/>
+<br/>
+<button (click)="submit()">submit</button>
+<br/>
+{{msg}}
+</div>
+<div>
+<table>
+<thead>
+  <th>
+    departmentcode
+  </th>
+  <th>
+    fullname
+  </th>
+  <th>
+    shortname
+  </th>
+  <th>
+    year
+  </th>
+</thead>
+<tbody>
+<tr *ngFor="let elmt of departements">
+  <td>
+    <button (click)="delete(elmt)">X</button>
+    {{elmt.content.departmentcode.content}}
+  </td>
+  <td>
+    {{elmt.content.fullname.content}}
+  </td>
+  <td>
+    {{elmt.content.shortname.content}}
+  </td>
+  <td>
+    {{elmt.content.year.content}}
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
